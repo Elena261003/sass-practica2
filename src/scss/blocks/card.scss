@@ -1,0 +1,103 @@
+@use '../mixins/responsive.scss' as *;
+@use '../mixins/pseudo.scss' as *;
+
+.card {
+  .img-mobile {
+    width: 327px;
+    height: 240px;
+    background-color: #1b1937;
+
+    @include responsive(laptop) {
+      width: 540px;
+      height: 446px;
+    }
+  }
+  .main {
+    @include responsive(laptop) {
+      width: 570px;
+      text-align: left;
+    }
+  }
+  width: 327px;
+  background-color: #1b1937;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  & ::after {
+    @include pseudo(327px, 240px) {
+      background-color: #aa5cdb11;
+      top: 0;
+      left: 0px;
+
+      @include responsive(laptop) {
+        width: 540px;
+        height: 446px;
+        left: 570px;
+      }
+    }
+  }
+
+  .h1 {
+    margin-block: 0;
+    font-size: 28px;
+    font-weight: 700;
+    @include responsive(laptop) {
+      font-size: 36px;
+      font-weight: 700;
+    }
+  }
+  p {
+    margin-block: 0;
+    color: #c4c4c4da;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  h2 {
+    margin-block: 0;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .h3 {
+    font-size: 12px;
+    font-weight: 400;
+  }
+  .main-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 40px 32px 40px 32px;
+    @include responsive(laptop) {
+      width: 374px;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      justify-content: left;
+      gap: 24px;
+    }
+  }
+  .score {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 32px;
+    @include responsive(laptop) {
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      margin-left: 30px;
+      gap: 60px;
+    }
+  }
+  .text-color {
+    color: #ab5cdb;
+  }
+  @include responsive(laptop) {
+    width: 1110px;
+    height: 446px;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
